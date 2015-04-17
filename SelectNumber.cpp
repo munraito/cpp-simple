@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int getDigit(int n, int k) {
+int getDigit(int n, int k) { //функция, в которой мы отделяем цифры от числа(n), пока не дойдем до нужного значения (k)
 	int res;
 	for (int i = 0; i < k; n /= 10, i++)
 		res = n % 10;
