@@ -6,18 +6,18 @@ using namespace std;
 int main()
 {
 	const short N = 500;
-	short buf = 0, res = 0;
-	vector<short> compNumb;
-	compNumb.push_back(2);
-	for (int i = 0; i < N - 1; i++) {
-		for (int rank = 0; rank < compNumb.size(); rank++){
+	int buf = 0, res = 0;
+	vector<int> compNumb;
+	compNumb.push_back(2); //начинаем с того, что заносим 2 в первый элемент
+	for (int i = 0; i < N - 1; i++) { //пробегаем по всему числу, по принципу - один элемент массива = один разряд
+		for (int rank = 0; rank < compNumb.size(); rank++){ //каждую итерацию цикла заменяем все предыдущие разряды (аналогия - вычисление столбиком)
 			res = compNumb[rank] * 2;
-			compNumb[rank] = buf + res % 10;
-			if (res > 9) buf = res / 10;
+			compNumb[rank] = buf + res % 1000000000;
+			if (res > 999999999) buf = res / 1000000000;
 			else buf = 0;
 
-			if (rank == compNumb.size() - 1 && res > 9) {
-				compNumb.push_back(res / 10);
+			if (rank == compNumb.size() - 1 && res > 999999999) {
+				compNumb.push_back(res / 1000000000);
 				buf = 0;
 				break;
 			}
