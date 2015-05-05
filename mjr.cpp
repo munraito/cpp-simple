@@ -4,14 +4,14 @@
 
 using namespace std;
 static const unsigned BIT_LENGTH = 8;
-
+/*
 string getMajorForm(string byte){
 	string tripleByte;
 	for (int i=0; i < 3; i++){
 		tripleByte += byte + " ";
 	}
 	return tripleByte;
-}
+} */
 
 int main(){
 	setlocale(LC_ALL, "Russian");
